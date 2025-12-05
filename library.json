@@ -1,0 +1,19 @@
+{
+  "name": "papilio_audio",
+  "version": "0.1.0",
+  "author": "GadgetFactory",
+  "maintainer": "GadgetFactory",
+  "sentence": "Retro sound chip emulation library for Papilio Arcade FPGA",
+  "paragraph": "Provides API for controlling SID 6581 (Commodore 64), YM2149 (Atari ST/ZX Spectrum), and POKEY (Atari 8-bit) sound chips implemented in the FPGA via Wishbone-over-SPI interface.",
+  "website": "https://github.com/GadgetFactory/papilio_audio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GadgetFactory/papilio_audio.git"
+  },
+  "license": "GPL-3.0",
+  "frameworks": ["arduino"],
+  "platforms": ["espressif32"],
+  "dependencies": {
+    "papilio_wishbone_spi_master": "*"
+  }
+}
