@@ -22,6 +22,7 @@
 #include "POKEY.h"
 #include "AudioMixer.h"
 #include "SIDPlayer.h"
+#include "YMPlayer.h"
 
 // Default Wishbone base addresses for audio peripherals
 // These match the address map in top.v gateware

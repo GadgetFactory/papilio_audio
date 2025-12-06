@@ -8,8 +8,10 @@
  * NOTE: This requires the YM2149 gateware to be loaded into the FPGA.
  */
 
+#define PAPILIO_MCP_ENABLED
 #include <SPI.h>
 #include <PapilioAudio.h>
+#include <PapilioMCP.h>
 
 // SPI pins for ESP32-S3
 #define SPI_SCK   12
@@ -28,6 +30,9 @@ void setup() {
     Serial.begin(115200);
     delay(1000);
     Serial.println("YM2149 Demo");
+    
+    // Initialize MCP
+    PapilioMCP.begin();
     
     // Initialize SPI
     SPI.begin(SPI_SCK, SPI_MISO, SPI_MOSI, SPI_CS);
@@ -52,6 +57,10 @@ void setup() {
 }
 
 void loop() {
+    // Process MCP commands
+    PapilioMCP.update();
+    if (PapilioMCP.isPaused()) return;
+    
     // Demo 1: Simple arpeggio on Voice 1
     Serial.println("Playing arpeggio on Voice 1...");
     for (int repeat = 0; repeat < 3; repeat++) {

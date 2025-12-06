@@ -73,11 +73,11 @@ void YMVoice::begin(uint16_t baseAddr, uint8_t freqAddr,
 }
 
 void YMVoice::writeReg(uint8_t addr, uint8_t value) {
-    wishboneWrite8(_baseAddr + addr, value);
+    wishboneWrite16(_baseAddr + addr, value);
 }
 
 uint8_t YMVoice::readReg(uint8_t addr) {
-    return wishboneRead8(_baseAddr + addr);
+    return wishboneRead16(_baseAddr + addr);
 }
 
 void YMVoice::updateLevel() {
@@ -174,11 +174,11 @@ void YM2149::begin() {
 }
 
 void YM2149::writeReg(uint8_t addr, uint8_t data) {
-    wishboneWrite8(_baseAddr + addr, data);
+    wishboneWrite16(_baseAddr + addr, data);
 }
 
 uint8_t YM2149::readReg(uint8_t addr) {
-    return wishboneRead8(_baseAddr + addr);
+    return wishboneRead16(_baseAddr + addr);
 }
 
 void YM2149::setNoiseFrequency(uint8_t freq) {
